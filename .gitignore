@@ -1,1 +1,9 @@
 
+/build/
+*.o
+todo_app
+commit.log
+.vscode/
+.idea/
+*.swp
+.DS_Store
