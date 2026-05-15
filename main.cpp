@@ -12,7 +12,7 @@ int main(){
     int next_id=1;
     int choice;
     while(true){
-        std::cout<<"1. Показать задачи"<<std::endl<<"2. Добавить задачу"<<std::endl<<"3. Выйти"<<std::endl;
+        std::cout<<"1. Показать задачи"<<std::endl<<"2. Добавить задачу"<<std::endl<<"3. Выйти"<<std::endl<<"4. Отметить задачу как выполненную"<<std::endl;
         std::cin>>choice;
         switch (choice){
             case 1:
@@ -42,11 +42,29 @@ int main(){
                 break;
             }
             case 3:
-                std::cout<<"Выход из программы..."<<std::endl;
+                std::cout<<"\nВыход из программы..."<<std::endl;
                 return 0;
                 break;
+            case 4: {
+                std::cout << "\nВведите ID задачи, которую вы выполнили: ";
+                int target_id;
+                std::cin >> target_id;
+                bool found = false;
+                for (auto& task : tasks) {
+                    if (task.id == target_id) {
+                        task.status = "Выполнено";
+                        found = true;
+                        std::cout << "Отлично! Задача #" << target_id << " отмечена как выполненная." << std::endl;
+                        break; 
+                    }
+                }
+                if (!found) {
+                    std::cout << "Ошибка: Задача с ID " << target_id << " не найдена." << std::endl;
+                }
+                break;
+            }
             default:
-                std::cout<<"Неверный пункт меню, попробуйте снова."<<std::endl;
+                std::cout<<"\nНеверный пункт меню, попробуйте снова."<<std::endl;
                 break;
         }
     }
