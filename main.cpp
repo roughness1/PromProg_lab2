@@ -17,7 +17,7 @@ int main() {
 
     while (true) {
         std::cout << "\n--- МЕНЕДЖЕР ЗАДАЧ ---" << std::endl;
-        std::cout << "1. Показать задачи" << std::endl;
+        std::cout << "1. [СПИСОК] Показать все задачи"<<std::endl;
         std::cout << "2. Добавить задачу" << std::endl;
         std::cout << "3. Выйти" << std::endl;
         std::cout << "4. Отметить задачу как выполненную" << std::endl;
